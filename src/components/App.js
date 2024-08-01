@@ -3,7 +3,6 @@ import React from "react";
 import '../styles/App.css';
 import {Route,Routes,Link} from 'react-router-dom';
 import Usero from './Usero';
-// import Usero from "../components/Usero"
 import Usert from './Usert';
 import Usertr from './Usertr';
 import Userf from './Userf';
@@ -14,10 +13,10 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-          <Route path='/o' element={<Usero/>}/> 
-          <Route path='/t' element={<Usert/>}/> 
-          <Route path='/tr' element={<Usertr/>}/> 
-          <Route path='/f' element={<Userf/>}/> 
+          <Route path='/users/1' element={<Usero/>}/> 
+          <Route path='/users/2' element={<Usert/>}/> 
+          <Route path='/users/3' element={<Usertr/>}/> 
+          <Route path='/users/4' element={<Userf/>}/> 
       </Routes>
     </div>
   )
