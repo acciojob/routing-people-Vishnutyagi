@@ -3,10 +3,24 @@ import { useState, useEffect } from 'react';
 
 function Usero() {
   const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Simulate a data fetch with a timeout
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000); // 1 second delay
+  }, []);
+
   return (
     <div>
-        <h1>User Details</h1>
-        <p>Name: Leanne Graham</p>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <div>
+          <h1>User Details</h1>
+          <p>Name: Leanne Graham</p>
+        </div>
+      )}
+        
     </div>
   )
 }
