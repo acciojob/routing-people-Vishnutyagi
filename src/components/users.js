@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const items=[
   { id: 1, name: 'Leanne Graham', description: 'Description for Item 1' },
@@ -11,20 +12,26 @@ const items=[
   { id: 3, name: 'Item 3', description: 'Description for Item 3' }
 ];
 
-function Home() {
+function Users() {
+  const [loading, setLoading] = useState(true);
+  const {itemId}=useParams();
+  const item = items.find(i => i.id === parseInt(itemId));
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000); 
+  }, []);
   return (
-    <div>
-        <h1>User List</h1>
-          <ul>
-              {items.map(item => (
-              <li key={item.id}>
-                <Link to={`/users/${item.id}`}>{item.name}</Link>
-              </li>
-            ))}
-          </ul>
-    </div>
+    <div>{loading ? (
+      <div>Loading...</div>
+    ) : (
+      <div>
+        <h1>User Details</h1>
+        <p>Name: {item.name}</p>
+      </div>
+    )}</div>
   )
 }
 
-export default Home
+export default Users
