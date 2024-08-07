@@ -3,13 +3,10 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const items=[
-  { id: 1, name: 'Leanne Graham', description: 'Description for Item 1',username: "Bret" },
-  { id: 2, name: 'Ervin Howell', description: 'Description for Item 2' ,username: "Antonette" },
-  { id: 3, name: 'Clenmentine Bouch', description: 'Description for Item 3',username: "Samantha"  },
-  { id: 3, name: 'Patricia Labsack', description: 'Description for Item 3',username: "Bret"  },
-  { id: 3, name: 'Item 1', description: 'Description for Item 1' },
-  { id: 3, name: 'Item 2', description: 'Description for Item 2' },
-  { id: 3, name: 'Item 3', description: 'Description for Item 3' }
+  { id: 1, name: 'Leanne Graham', description: 'Description for Item 1',username: "Bret",email:"Sincere@april.biz" },
+  { id: 2, name: 'Ervin Howell', description: 'Description for Item 2' ,username: "Antonette",email:"Sincere@april.biz" },
+  { id: 3, name: 'Clenmentine Bouch', description: 'Description for Item 3',username: "Samantha",email:"Sincere@april.biz"  },
+  { id: 3, name: 'Patricia Labsack', description: 'Description for Item 3',username: "Bret" ,email:"Sincere@april.biz" }
 ];
 
 function Users() {
@@ -30,6 +27,7 @@ function Users() {
         <h1>User Details</h1>
         <p>Name: {item.name}</p>
         <p>Username: {item.username} </p>
+        <p>Email: {item.email} </p>
       </div>
     )}</div>
   )
